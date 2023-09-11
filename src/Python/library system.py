@@ -51,37 +51,45 @@ class Library:
         self.display()
         name = input("Enter your name: ")
         retbooknum = input("Enter the serial number of the book you want to return: ")
-        if name in issueDic.keys() and issueDic[name]==(self.book_catalogue)[int(retbooknum)-1] :
-                print("Thanks "+name+" for returning the book "+(self.book_catalogue)[int(retbooknum)-1] + " in time")
-                issueDic.pop(name)
+        if name in issueDic.keys() and issueDic[name]==(self.book_catalogue)[int(retbooknum)-1]:
+            print(
+                f"Thanks {name} for returning the book {self.book_catalogue[int(retbooknum) - 1]} in time"
+            )
+            issueDic.pop(name)
         else:
             print("Record Not Found,Check the input details again carefully")
     def donate(self):
         donorName=input("Enter your name: ")
         bookDonated=input("Enter the name of the book you want to donate: ")
         (self.book_catalogue).append(bookDonated)
-        print("Thanks "+str(donorName)+" for your generosity. Your contribution will empower many students ")
+        print(
+            f"Thanks {str(donorName)} for your generosity. Your contribution will empower many students "
+        )
         DonorDic[donorName]=bookDonated
     def display(self):
        print("--- Our library currently have following books")
        for i in range(len(self.book_catalogue)):
         print(i+1," ",self.book_catalogue[i])
     def issueTheBook(self):
-       self.display()
-       name = input("Enter your name: ")
-       booknum=input("Enter the serial number of the book you want to issue: ")
-       if int(booknum)-1 not in list(range(len(self.book_catalogue))):
+        self.display()
+        name = input("Enter your name: ")
+        booknum=input("Enter the serial number of the book you want to issue: ")
+        if int(booknum)-1 not in list(range(len(self.book_catalogue))):
             print("Choose the serial number only provided in the given range of book catalogue.\n Wait for a while and type your response again")
             time.sleep(3)
             self.issueTheBook()
 
-       elif (self.book_catalogue)[int(booknum)-1] not in issueDic.values():
+        elif (self.book_catalogue)[int(booknum)-1] not in issueDic.values():
             issueDic[name]=(self.book_catalogue)[int(booknum)-1]
-            print("You have issued the book titled " + (self.book_catalogue)[int(booknum)-1])
+            print(
+                f"You have issued the book titled {self.book_catalogue[int(booknum) - 1]}"
+            )
 
 
-       else:
-            print("Sorry " + name+ " ,this book is already issued by someone else. We hope that you get it soon.")
+        else:
+            print(
+                f"Sorry {name} ,this book is already issued by someone else. We hope that you get it soon."
+            )
     def issuedBookList(self):
        print("Person's name","\t"," Issued Book")
        for i in issueDic.keys():
