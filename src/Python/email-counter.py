@@ -3,7 +3,7 @@
 name = input("Enter file name:")
 handle = open(name)
 emails = []
-counts = dict()
+counts = {}
 large_word = None
 large_num = None
 for line in handle:
@@ -13,7 +13,7 @@ for line in handle:
 for email in emails:
     counts[email] = counts.get(email, 0) + 1
 for k,v in counts.items():
-    if large_num == None or v > large_num:
+    if large_num is None or v > large_num:
         large_num = v
-        large_word = k 
+        large_word = k
 print(large_word, large_num)

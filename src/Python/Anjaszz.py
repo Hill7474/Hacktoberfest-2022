@@ -27,33 +27,27 @@ while True:
   print ("4. Junior Suit Room(JRST) /Malam = R.p490000")
   print ("5. Suit Room(STE) /Malam         = Rp.550000")
   print ("6. Presidential Suit(VVIP)/Malam = Rp.720000")
- 
+
   nomor = int(input("MASUKKAN PILIHAN KAMAR : "))
   menginap = int(input("BERAPA MALAM        : "))
- 
-  if nomor==1:
-   total1=menginap*300000
-   print (menginap," MALAM KAMAR STD Rp.", total1)
+
+  if nomor == 1:
+   print(menginap, " MALAM KAMAR STD Rp.", menginap*300000)
    jenis1=("Standar Room(STD)")
-  elif nomor==2:
-   total1=menginap*387000
-   print (menginap," MALAM KAMAR SUP Rp.", total1)
+  elif nomor == 2:
+   print(menginap, " MALAM KAMAR SUP Rp.", menginap*387000)
    jenis1=("Superior Room(SUP)")
-  elif nomor==3:
-   total1=menginap*420000
-   print (menginap," MALAM KAMAR DLX Rp.", total1)
+  elif nomor == 3:
+   print(menginap, " MALAM KAMAR DLX Rp.", menginap*420000)
    jenis1=("Delux Room(DLX) ")
-  elif nomor==4:
-   total1=menginap*490000
-   print (menginap," MALAM KAMAR JRST Rp.", total1)
+  elif nomor == 4:
+   print(menginap, " MALAM KAMAR JRST Rp.", menginap*490000)
    jenis1=("Junior Suit Room(JRST) ")
-  elif nomor==5:
-   total1=menginap*550000
-   print (menginap," MALAM KAMAR STE Rp.", total1)
+  elif nomor == 5:
+   print(menginap, " MALAM KAMAR STE Rp.", menginap*550000)
    jenis1=("Suit Room(STE)")
-  elif nomor==6:
-   total1=menginap*720000
-   print (menginap," MALAM KAMAR VVIP Rp.", total1)
+  elif nomor == 6:
+   print(menginap, " MALAM KAMAR VVIP Rp.", menginap*720000)
    jenis1=("Presidential Suit(VVIP)")
   else:
    print("Pilihan Kamar Tidak Ditemukan!")
